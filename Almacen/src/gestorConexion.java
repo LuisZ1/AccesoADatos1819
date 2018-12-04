@@ -5,9 +5,9 @@ import java.sql.SQLException;
 public class gestorConexion{
 
     private String sourceURL = "jdbc:sqlserver://localhost";
-    private String usuario = "amazon";
-    private String password = "allavoy";
-    private String baseDeDatos = "ACDAT";
+    private String usuario = "pepito";
+    private String password = "123123**";
+    private String baseDeDatos = "AlmacenesLeo";
     private Connection conexion;
 
     public void abrirConexion(){
