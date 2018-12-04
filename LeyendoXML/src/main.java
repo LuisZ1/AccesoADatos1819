@@ -5,7 +5,7 @@ public class main {
         String nombreArchivo = "discos.xml";
         PruebaSAX1 probando = new PruebaSAX1(nombreArchivo);
         probando.andale();
-
+        int i = 0;
     }
 
 }
