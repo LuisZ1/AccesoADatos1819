@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="probandoHibernate@107-12" uuid="e621c32f-b43c-4d24-844c-2dfe52d9078f">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" family="MSSQL" exact-version="0.0" />
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>contraseña</user-name>
+    </data-source>
+  </component>
+</project>
