@@ -1,4 +1,4 @@
-package persistente;
+package ejemplocriaturitas;
 // Generated 29-ene-2019 11:52:53 by Hibernate Tools 4.3.1
 
 

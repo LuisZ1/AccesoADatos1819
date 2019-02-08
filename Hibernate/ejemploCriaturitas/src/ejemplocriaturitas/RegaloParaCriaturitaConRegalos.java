@@ -1,7 +1,4 @@
-/*
-
- */
-package persistente;
+package ejemplocriaturitas;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
