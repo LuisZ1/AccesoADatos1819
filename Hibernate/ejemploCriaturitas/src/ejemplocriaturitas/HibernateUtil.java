@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package conexion;
+package ejemplocriaturitas;
 
 import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;

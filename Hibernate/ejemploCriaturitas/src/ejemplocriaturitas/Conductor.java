@@ -1,9 +1,9 @@
 package ejemplocriaturitas;
 
-import conexion.HibernateUtil;
+import ejemplocriaturitas.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import persistente.*;
+import ejemplocriaturitas.*;
 
 /**
  *
@@ -15,7 +15,7 @@ public class Conductor {
         Regalos surprise; //cambiar a regalocriaturitaconregalo
 
         surprise = (Regalos)s.get(Regalos.class, id);
-        System.out.println(surprise.toString()+" Propietari-> "+surprise.getPropietario().toString());
+        System.out.println(surprise.toString()+" Propietari-> "+surprise.getCriaturitas().toString());
     }
     private static void recuperaCriaturitaConRegalos(Session s, byte id){
  
@@ -33,13 +33,15 @@ public class Conductor {
     }
     public static void main(String[] args) {
 
+        System.out.println("======================================================");
+        
         SessionFactory instancia = HibernateUtil.buildSessionFactory();
         Session ses = instancia.openSession(); 
             int idR = 6;
             byte idC = 3;
-//            recuperaRegaloConCriaturita(ses,idR);
+            recuperaRegaloConCriaturita(ses,idR);
             System.out.println("======================================================");
-            recuperaCriaturitaConRegalos (ses,idC);
+            //recuperaCriaturitaConRegalos (ses,idC);
             ses.close();
         
         
