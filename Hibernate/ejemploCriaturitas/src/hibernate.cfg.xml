@@ -46,7 +46,7 @@ Contributor(s):
     <property name="hibernate.connection.username">contraseña</property>
     <property name="hibernate.connection.password">contraseña</property>
     <mapping class="ejemplocriaturitas.EjemploCriaturitas"/>
-    <mapping class="ejemplocriaturitas.Regalos"/>
-    <mapping class="ejemplocriaturitas.Criaturitas"/>
+    <mapping class="ejemplocriaturitas.RegaloParaCriaturitaConRegalos"/>
+    <mapping class="ejemplocriaturitas.CriaturitaConRegalos"/>
   </session-factory>
 </hibernate-configuration>
