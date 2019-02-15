@@ -55,7 +55,19 @@ public class gestor {
     }
     
     public static void quitarRegaloACriaturita(Session s, byte idC, byte idR){
-        System.out.println("En construccion, id recibido: "+idC+", "+idR);
+        
+        CriaturitaConRegalos criatura;
+        ArrayList<RegaloParaCriaturitaConRegalos> listaRegalos = new ArrayList<RegaloParaCriaturitaConRegalos>();
+     
+        criatura = (CriaturitaConRegalos)s.get(CriaturitaConRegalos.class, idC);
+        
+        int cont = 1;
+        for( RegaloParaCriaturitaConRegalos surprise: criatura.getRegalitos() ){
+            listaRegalos.add(surprise);
+            cont++;
+        }
+        
+        criatura.EliminarRegalo(listaRegalos.get(idR));
     }
     
     public static void asignarRegaloACriaturita(Session s, byte idC, byte idR){
