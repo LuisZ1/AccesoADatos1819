@@ -6,6 +6,7 @@
 package probandohibernateconle;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import modelos.Criaturita;
 import modelos.CriaturitaConRegalos;
 import modelos.RegaloParaCriaturitaConRegalos;
@@ -54,10 +55,11 @@ public class gestor {
         }
     }
     
-    public static void quitarRegaloACriaturita(Session s, byte idC, byte idR){
+    public static void quitarRegaloACriaturita(Session s, byte idC){
         
         CriaturitaConRegalos criatura;
         ArrayList<RegaloParaCriaturitaConRegalos> listaRegalos = new ArrayList<RegaloParaCriaturitaConRegalos>();
+        Scanner teclado = new Scanner(System.in);
      
         criatura = (CriaturitaConRegalos)s.get(CriaturitaConRegalos.class, idC);
         
@@ -65,9 +67,14 @@ public class gestor {
         for( RegaloParaCriaturitaConRegalos surprise: criatura.getRegalitos() ){
             listaRegalos.add(surprise);
             cont++;
+            System.out.println(cont+") "+surprise.toString());
         }
         
-        criatura.EliminarRegalo(listaRegalos.get(idR));
+        System.out.println("num de regalo quiere quitar?");
+        int regaloQuitar = teclado.nextInt();
+        
+        criatura.EliminarRegalo(listaRegalos.get(regaloQuitar));
+        //listaRegalos.get(regaloQuitar).setPropietario(null);
     }
     
     public static void asignarRegaloACriaturita(Session s, byte idC, byte idR){
