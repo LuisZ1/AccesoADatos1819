@@ -25,8 +25,8 @@ public class Regalos implements java.io.Serializable {
     @Column(name = "ID", unique = true, nullable = false)
     private byte id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "GoesTo")
+    /*@ManyToOne(fetch = FetchType.LAZY)*/
+    /*@JoinColumn(name = "GoesTo")*/
     private Criaturitas criaturitas;
 
     @Column(name = "Denominacion", nullable = false)

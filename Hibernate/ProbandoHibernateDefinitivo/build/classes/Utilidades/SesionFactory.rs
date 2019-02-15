@@ -1,0 +1,1 @@
+probandohibernate.SesionFactory

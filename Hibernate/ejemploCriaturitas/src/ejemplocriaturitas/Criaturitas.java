@@ -28,7 +28,7 @@ public class Criaturitas implements java.io.Serializable {
     @Column(name = "Nombre")
     private Serializable nombre;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "regalos")
+    /*@OneToMany(fetch = FetchType.LAZY, mappedBy = "regalos")*/
     private Set regaloses = new HashSet(0);
 
     public Criaturitas() {
