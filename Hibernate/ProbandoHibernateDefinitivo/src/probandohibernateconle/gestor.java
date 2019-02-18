@@ -12,6 +12,7 @@ import modelos.CriaturitaConRegalos;
 import modelos.RegaloParaCriaturitaConRegalos;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -73,8 +74,13 @@ public class gestor {
         System.out.println("num de regalo quiere quitar?");
         int regaloQuitar = teclado.nextInt();
         
+        
+        Transaction tran = s.beginTransaction();
+        
+        listaRegalos.get(regaloQuitar).setPropietario(null);
         criatura.EliminarRegalo(listaRegalos.get(regaloQuitar));
-        //listaRegalos.get(regaloQuitar).setPropietario(null);
+        
+        tran.commit();
     }
     
     public static void asignarRegaloACriaturita(Session s, byte idC, byte idR){

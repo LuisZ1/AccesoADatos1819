@@ -23,10 +23,12 @@ public class Main {
     public static void main(String[] args){
         System.out.println("Hola caracola");
         
+        
+        
         SessionFactory instancia = SesionFactory.getSessionFactory();
         Session ses = instancia.openSession(); 
         
-        
+        /*
         System.out.println("\n TODAS LAS CRIATURITAS ===========================");
         gestor.getTodasCriaturitas(ses);
         
@@ -36,8 +38,9 @@ public class Main {
         System.out.println("\n CRIATURITA Y SUS REGALOS ========================");
         byte idC = 2;
         gestor.recuperaCriaturitaConRegalos (ses,idC);
-        
+        */
         System.out.println("\n QUITAR REGALO A CRIATURITA ======================");
+        
         System.out.println("\n ASIGNAR REGALO A CRIATURITA =====================");
         System.out.println("\n CREAR CRIATURITA ================================");
         System.out.println("\n CREAR REGALO ====================================");
