@@ -10,36 +10,40 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import probandohibernate.SesionFactory;
+import modelos.RegaloParaCriaturitaConRegalos;
 
 
 @Entity
-@Table(name="Criaturitas")
-public class CriaturitaConRegalos  implements java.io.Serializable {
+@Table(name="Criaturitas"
+)
+public class CriaturitaConRegalos_1  implements java.io.Serializable {
 
     @Id
+
     @Column(name="Id", nullable=false)
      private byte id;
 
     @Column(name="Nombre")
      private String nombre;
 
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="GoesTo")
     private List<RegaloParaCriaturitaConRegalos> regalitos = new ArrayList<>();
 
-    public CriaturitaConRegalos() {
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+     private List<Cuento> listaCuentos=new ArrayList();
+
+    public CriaturitaConRegalos_1() {
     }
 
-    public CriaturitaConRegalos(byte id) {
+    public CriaturitaConRegalos_1(byte id) {
         this.id = id;
     }
-    public CriaturitaConRegalos(byte id, String nombre) {
+    public CriaturitaConRegalos_1(byte id, String nombre) {
        this.id = id;
        this.nombre = nombre;
     }
@@ -68,16 +72,18 @@ public class CriaturitaConRegalos  implements java.io.Serializable {
     public void setRegalitos(List<RegaloParaCriaturitaConRegalos> regalitos) {
         this.regalitos = regalitos;
     }
+    public List<Cuento> getListaCuentos() {
+        return listaCuentos;
+    }
+
+    public void setListaCuentos(List<Cuento> listaCuentos) {
+        this.listaCuentos = listaCuentos;
+    }
     @Override
     public String toString() {
         return "Criaturita{" + "id=" + id + ", nombre=" + nombre + '}';
     }
 
-    public boolean EliminarRegalo(RegaloParaCriaturitaConRegalos regalo){
-        boolean ret = false;
-        ret = this.regalitos.remove(regalo);
-        return ret;
-    }
 }
 
 
